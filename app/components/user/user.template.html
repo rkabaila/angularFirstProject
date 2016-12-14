@@ -1,0 +1,19 @@
+<div class="user-container">
+    <h1>Hello, {{name}}</h1>
+    <div> Email: {{email}}</div>
+    <div> Address: {{address.country}} , {{address.city}} , {{address.street}}</div>
+    <div class="hobbies">
+        <h4 (click)="toggleHobbies()">Hobbies</h4>
+        <div *ngIf="showHobbies">
+            <ul>
+                <li *ngFor="let hobby of hobbies; let i = index"
+                    (click)="onHobbyClicked(hobby)">
+                    {{hobby}}
+                    <button (click)="deleteHobby(i)"> Delete</button>
+                </li>
+            </ul>
+            <input type="text" #newHobby/>
+            <button (click)="addHobby(newHobby.value)"> Add hobby</button>
+        </div>
+    </div>
+</div>
