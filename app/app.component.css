@@ -8,23 +8,3 @@
 }
 
 
-ul{
-    background-color: green;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    height: 30px;
-}
-
-li{
-    align-self: center;
-}
-
-a{
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    margin: 20px;
-}
-

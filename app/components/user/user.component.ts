@@ -11,7 +11,6 @@ export class UserComponent  {
     address: address;
     hobbies: string[];
     showHobbies: boolean;
-    clickedHobby: string;
 
     constructor(){
         this.name = 'Rimas';
@@ -21,25 +20,6 @@ export class UserComponent  {
             city: 'Kaunas',
             country: 'LT'
         };
-        this.hobbies = ['music', 'sport'];
-        this.showHobbies = false;
-        this.clickedHobby = '';
-    }
-
-    toggleHobbies(){
-        this.showHobbies = !this.showHobbies;
-    }
-
-    deleteHobby(index){
-        this.hobbies.splice(index, 1);
-    }
-
-    addHobby(newHobby){
-        this.hobbies.push(newHobby);
-    }
-
-    onHobbyClicked(hobby){
-        this.clickedHobby = hobby;
     }
 }
 

@@ -2,14 +2,26 @@
     <h3> Shopping list </h3>
     <ul>
         <li
-                *ngFor="let item of shoppingListItems"
+                *ngFor="
+                let item of shoppingListItems"
                 (click)="onItemClicked(item)"
-        > {{item.name}}
+        >
+            {{item.name}}
+            -
+            {{item.amount}}
+            <div class="edit-item-container" *ngIf="item.showEditItem">
+                <input type="text" [(ngModel)]="item.name">
+                <input class="input-amount" type="text" [(ngModel)]="item.amount">
+
+            </div>
+
+            <button class="delete-button" (click)="onDeleteItem(item)"> Delete </button>
         </li>
     </ul>
-    <input type="text" [(ngModel)]="selectedItem.name">
-    <button (click)="onDeleteItem()"> Delete item</button>
-    <br>
-    <input type="text" #newItem>
-    <button (click)="onAddItem(newItem)"> Add item</button>
+
+    <div class="add-item-container">
+        <input placeholder='name' type="text" #newItemName (click)="hideEditContainer()">
+        <input class="input-amount" placeholder='amount' type="text" #newItemAmount (click)="hideEditContainer()">
+        <button (click)="onAddItem(newItemName, newItemAmount)"> Add item</button>
+    </div>
 </div>
