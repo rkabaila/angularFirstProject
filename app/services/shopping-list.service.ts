@@ -1,22 +1,15 @@
-export class ShoppingListService{
-    getShoppingList(){
-        return [
-            {
-                showEditItem:false,
-                name: 'milk',
-                amount: 1,
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/map';
 
-            },
-            {
-                showEditItem:false,
-                name: 'sugar',
-                amount: 5
-            },
-            {
-                showEditItem:false,
-                name: 'bread',
-                amount: 1
-            }
-        ];
+@Injectable()
+export class ShoppingListService{
+    constructor(private http: Http){
+        console.log('Posts service initialized...');
+    }
+
+    getShoppingList(){
+        return this.http.get('data/list.json')
+            .map(res => res.json());
     }
 }

@@ -9,13 +9,11 @@ import {ShoppingListService} from '../../services/shopping-list.service';
 })
 export class ShoppingListComponent {
     shoppingListItems = [];
-    selectedItem = {
-        name: '',
-        amount: 0
-    };
-
+    selectedItem = {};
     constructor(private shoppingListService: ShoppingListService) {
-        this.shoppingListItems = shoppingListService.getShoppingList();
+        this.shoppingListService.getShoppingList().subscribe(list => {
+            this.shoppingListItems = list;
+        });
     }
 
     hideEditContainer() {
@@ -35,7 +33,8 @@ export class ShoppingListComponent {
         if (itemName.value != '') {
             this.shoppingListItems.push({
                 name: itemName.value,
-                amount: itemAmount.value
+                amount: itemAmount.value,
+                showEditItem: false
             });
         }
     }
