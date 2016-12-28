@@ -5,6 +5,7 @@ import { UserComponent }  from './components/user/user.component';
 import { ShoppingListComponent} from './components/shopping-list/shopping-list.component';
 import { PostDetailsComponent} from './components/post-details/post-details.component';
 import { PostsComponent} from './components/posts/posts.component';
+import { CoursesComponent} from './components/courses/courses.component';
 
 const appRoutes : Routes = [
     {
@@ -22,6 +23,10 @@ const appRoutes : Routes = [
     {
         path:'posts/:id',
         component: PostDetailsComponent,
+    },
+    {
+        path:'courses',
+        component: CoursesComponent,
     }
 ];
 
