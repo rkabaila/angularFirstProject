@@ -8,7 +8,7 @@ import { PostsService} from '../../services/posts.service';
     providers: [PostsService]
 })
 export class PostsComponent {
-    posts: posts[];
+    posts: Post[];
 
     constructor(private postsService: PostsService){
         this.posts = [];
@@ -18,7 +18,7 @@ export class PostsComponent {
     }
 }
 
-interface posts{
+interface Post{
     id: string;
     title: string;
     body: string;
