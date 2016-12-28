@@ -14,6 +14,11 @@ import { CoursesComponent }  from './components/courses/courses.component';
 import { CourseCardsComponent }  from './components/course-cards/course-cards.component';
 import { SideMenuComponent }  from './components/side-menu/side-menu.component';
 import { CoursesCategoryComponent } from './components/courses-category/courses-category.component';
+
+import { AboutComponent }  from './components/about/about.component';
+import { AboutHomeComponent }  from './components/about-home/about-home.component';
+import { AboutItemComponent }  from './components/about-item/about-item.component';
+
 import { routing} from './app.routing';
 
 @NgModule({
@@ -29,7 +34,10 @@ import { routing} from './app.routing';
         CoursesComponent,
         CourseCardsComponent,
         SideMenuComponent,
-        CoursesCategoryComponent
+        CoursesCategoryComponent,
+        AboutComponent,
+        AboutHomeComponent,
+        AboutItemComponent
       ],
   bootstrap:    [ AppComponent ],
 })
