@@ -22,6 +22,6 @@
     <div class="add-item-container">
         <input placeholder='name' type="text" #newItemName (click)="hideEditContainer()">
         <input class="input-amount" placeholder='amount' type="text" #newItemAmount (click)="hideEditContainer()">
-        <button (click)="onAddItem(newItemName, newItemAmount)"> Add item</button>
+        <button (click)="onAddItem(newItemName.value, newItemAmount.value)"> Add item</button>
     </div>
 </div>

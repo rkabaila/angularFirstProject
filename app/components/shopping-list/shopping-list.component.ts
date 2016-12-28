@@ -8,8 +8,8 @@ import {ShoppingListService} from '../../services/shopping-list.service';
     providers: [ShoppingListService]
 })
 export class ShoppingListComponent {
-    shoppingListItems = [];
-    selectedItem = {};
+    shoppingListItems: ListItem[];
+    selectedItem: ListItem;
     constructor(private shoppingListService: ShoppingListService) {
         this.shoppingListService.getShoppingList().subscribe(list => {
             this.shoppingListItems = list;
@@ -23,23 +23,29 @@ export class ShoppingListComponent {
         }
     }
 
-    onItemClicked(item) {
+    onItemClicked(item: ListItem) {
         this.hideEditContainer();
         item.showEditItem = true;
         this.selectedItem = item;
     }
 
-    onAddItem(itemName, itemAmount) {
-        if (itemName.value != '') {
+    onAddItem(itemName: string, itemAmount: number) {
+        if (itemName != '') {
             this.shoppingListItems.push({
-                name: itemName.value,
-                amount: itemAmount.value,
+                name: itemName,
+                amount: itemAmount,
                 showEditItem: false
             });
         }
     }
 
-    onDeleteItem(item) {
+    onDeleteItem(item: ListItem) {
         this.shoppingListItems.splice(this.shoppingListItems.indexOf(item), 1);
     }
+}
+
+interface ListItem {
+    name: string;
+    amount: number;
+    showEditItem: boolean;
 }

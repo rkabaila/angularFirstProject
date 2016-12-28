@@ -6,6 +6,9 @@ import { ShoppingListComponent} from './components/shopping-list/shopping-list.c
 import { PostDetailsComponent} from './components/post-details/post-details.component';
 import { PostsComponent} from './components/posts/posts.component';
 import { CoursesComponent} from './components/courses/courses.component';
+import { CourseCardsComponent} from './components/course-cards/course-cards.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { CoursesCategoryComponent } from './components/courses-category/courses-category.component';
 
 const appRoutes : Routes = [
     {
@@ -27,7 +30,32 @@ const appRoutes : Routes = [
     {
         path:'courses',
         component: CoursesComponent,
+        children: [
+            {
+                path: '',
+                component: CourseCardsComponent
+            },
+            {
+                path: ':id',
+                component: CoursesCategoryComponent
+            },
+            {
+                path: '',
+                outlet: 'sidemenu',
+                component: SideMenuComponent
+            },
+            {
+                path: ':id',
+                outlet: 'sidemenu',
+                component: SideMenuComponent
+            }
+        ]
     }
+
+    // {
+    //     path: "**",
+    //     component: PageNotFoundComponent
+    // }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

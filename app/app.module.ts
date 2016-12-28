@@ -11,6 +11,9 @@ import { PostDetailsComponent }  from './components/post-details/post-details.co
 import { NavBarComponent }  from './components/nav-bar/nav-bar.component';
 import { HobbiesComponent }  from './components/hobbies/hobbies.component';
 import { CoursesComponent }  from './components/courses/courses.component';
+import { CourseCardsComponent }  from './components/course-cards/course-cards.component';
+import { SideMenuComponent }  from './components/side-menu/side-menu.component';
+import { CoursesCategoryComponent } from './components/courses-category/courses-category.component';
 import { routing} from './app.routing';
 
 @NgModule({
@@ -23,7 +26,10 @@ import { routing} from './app.routing';
         PostDetailsComponent,
         NavBarComponent,
         HobbiesComponent,
-        CoursesComponent
+        CoursesComponent,
+        CourseCardsComponent,
+        SideMenuComponent,
+        CoursesCategoryComponent
       ],
   bootstrap:    [ AppComponent ],
 })
